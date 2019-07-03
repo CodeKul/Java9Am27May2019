@@ -5,22 +5,21 @@ import java.io.IOException;
 public class ExceptionDemo {
        String string=new String("");
        static int[] array={1,2,3,4,5};
+
         private void arithmaticException(){
             try{
                 int a=10;
                 System.out.println("a : "+(a/0));
             }
             catch (NullPointerException e){
-                System.out.println("Number cannot divide by 0");
+                System.out.println("Number cannot divide by 0"+e);
             }
-            catch (ArithmeticException e){
-                System.out.println("Number cannot divide by 0");
+            finally {
+                System.out.println("Rest of the code");
             }
 
-
-            System.out.println("Rest of the code");
         }
-    static String name="123";
+    static String name="codekul";
         private  static void nullPointerException() {
             try {
                 int length=name.length();
@@ -58,7 +57,7 @@ public class ExceptionDemo {
         }
 
     public static void main(String[] args) {
-            arrayOutOfBoundException();
+        new ExceptionDemo().arithmaticException();
     }
 
 }
